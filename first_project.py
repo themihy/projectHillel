@@ -39,12 +39,37 @@ from unittest import removeResult
 #print(n2)
 #print (n3)
 
-number_a = 28
-number_b = 41
-result = number_a * number_b
-print (result)
+# number_a = 28
+# number_b = 41
+# result = number_a * number_b
+# print (result)
+#
+# first_number = int(input("Enter a first number:"))
+# second_number = int(input("Enter a second number"))
+# result = first_number + second_number
+# print(f"Hello, your lacky number is {result}")
 
-first_number = int(input("Enter a first number:"))
-second_number = int(input("Enter a second number"))
-result = first_number + second_number
-print(f"Hello, your lacky number is {result}")
+#Калькулятор
+
+# first_number = int(input("Enter a first number:"))
+# second_number = int(input("Enter a second number:"))
+# operator = input("Enter a operator")
+# if operator == "+":
+#     print(first_number + second_number)
+# elif operator == "-":
+#     print(first_number - second_number)
+# elif operator == "*":
+#     print(first_number * second_number)
+# elif operator == "/":
+#         if second_number == 0:
+#             print("Error")
+#             exit()
+#         print(first_number / second_number)
+# else:
+#     print("Error")
+
+
+
+
+
+
