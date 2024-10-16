@@ -1,4 +1,5 @@
 # print("hello world")
+from pydoc import resolve
 from unittest import removeResult
 
 # number = int(input("Enter number:"))
@@ -49,7 +50,7 @@ from unittest import removeResult
 # result = first_number + second_number
 # print(f"Hello, your lacky number is {result}")
 
-#Калькулятор
+#Калькулятор hw_1
 
 # first_number = int(input("Enter a first number:"))
 # second_number = int(input("Enter a second number:"))
@@ -68,8 +69,23 @@ from unittest import removeResult
 # else:
 #     print("Error")
 
+# hw_2
+
+# numbers = [1, 2, 3, 4, 5]
+# numbers.insert(0, numbers[-1])
+# numbers.pop()
+# print(numbers)
 
 
+#hw_3
 
-
-
+# numbers = [1,2,3]
+# number_to_add = 1
+# numbers_Quantity = len(numbers)
+# if numbers_Quantity % 2 == 0:
+#     number_to_add = 0
+#
+# leftPart = numbers [: numbers_Quantity // 2 + number_to_add]
+# rightPart = numbers  [ numbers_Quantity // 2 + number_to_add:]
+# result = [leftPart, rightPart]
+# print(result)
