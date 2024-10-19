@@ -187,8 +187,8 @@ from unicodedata import numeric
 
 #hw4.3
 # import random
-
-
+#
+#
 # length = random.randint(3, 10)
 #
 #
