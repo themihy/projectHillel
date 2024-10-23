@@ -142,20 +142,12 @@ from unicodedata import numeric
 #     print(numbers[i], end=" ")
 #
 #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# import random
+# a = random.randint (1, 10)
+# print(a)
+# random_list = [random.randint(1, 100) for _ in range(a)]
+# print("Исходный список:", random_list)
+#
 
 #hw_4.1
 
@@ -182,7 +174,7 @@ from unicodedata import numeric
 # print(result)
 #
 # formatted_result = f"({'+'.join(str(num[i]) for i in range(0, len(num), 2))}) * {num[-1]} = {result}"
-# print(formatted_result) #нашел эту формулу с интернета, потому если быть по честному))) Я ее до сих пор понять не могу)
+# print(formatted_result) #нашел эту формулу с интернета, если быть по честному))) Я ее до сих пор понять не могу)
 
 
 #hw4.3
@@ -203,3 +195,122 @@ from unicodedata import numeric
 #
 # new_list = [first_element, third_element, second_from_end]
 # print("Новый список:", new_list)
+
+
+
+
+########
+#hw 5.1
+
+# import keyword
+# import string
+#
+# def is_valid_variable_name(variable_name):
+#     # Перевірка на зареєстровані слова
+#     if variable_name in keyword.kwlist:
+#         return False
+#
+#     # Перевірка на початок з цифри
+#     if variable_name[0].isdigit():
+#         return False
+#
+#     # Перевірка на наявність великих літер, пробілів та знаків пунктуації
+#     if any(char.isupper() or char in string.punctuation or char.isspace() for char in variable_name):
+#         return False
+#
+#     # Перевірка на кількість нижніх підкреслень
+#     if variable_name.count('_') > 1:
+#         return False
+#
+#     return True
+#
+# # Приклад використання
+# user_input = input("Введіть ім'я змінної: ")
+# result = is_valid_variable_name(user_input)
+# print(result)
+
+
+
+
+
+#hw 5.2
+# while True:
+#     confirmation = "y"
+#     first_number = int(input("Enter a first number:"))
+#     second_number = int(input("Enter a second number:"))
+#     operator = input("Enter a operator")
+#     if operator == "+":
+#             print(first_number + second_number)
+#     elif operator == "-":
+#             print(first_number - second_number)
+#     elif operator == "*":
+#             print(first_number * second_number)
+#     elif operator == "/":
+#             if second_number == 0:
+#                 print("Error")
+#                 exit()
+#             print(first_number / second_number)
+#             continue
+#     else:
+#         print("Error")
+#         continue
+#
+#     is_continue = input(f"Do you want to continue? \'{confirmation}\' for yes: ")
+#     if is_continue not in ['yes', 'y']:
+#             print("Exit from program...")
+#             break
+
+#hw5.3
+#
+# import string
+#
+#
+# def create_hashtag(input_string):
+#     # Видалення знаків пунктуації та пробілів
+#     clean_string = ''.join(char for char in input_string if char not in string.punctuation and not char.isspace())
+#
+#     # Розділення на слова та перетворення кожного слова
+#     words = clean_string.split()
+#     hashtag = '#' + ''.join(word.title() for word in words)
+#
+#     # Обрізання до 140 символів, якщо потрібно
+#     if len(hashtag) > 140:
+#         hashtag = hashtag[:140]
+#
+#     return hashtag
+
+#
+# # Приклад використання
+# user_input = input("Введіть рядок: ")
+# result = create_hashtag(user_input)
+# print(result)
+
+
+user_input = input("Введіть рядок: ")
+import string
+def made_hashtag(input_string):
+    clean_string = ""
+
+    # Проход по каждому символу во входной строке
+    for i in input_string:
+
+        # Проверяем, что символ не является пунктуацией и не пробелом
+        if i not in string.punctuation and  i.isalpha():
+            clean_string += i
+
+    words = clean_string.split()
+
+
+    hashtag = "#"
+    for word in words:
+        hashtag += word.title()
+
+    if len(hashtag) > 140:
+        hashtag = hashtag[:140]
+
+    return hashtag
+
+
+result = made_hashtag(user_input)
+print(result)
+
