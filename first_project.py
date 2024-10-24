@@ -200,35 +200,6 @@ from unicodedata import numeric
 
 
 ########
-#hw 5.1
-
-# import keyword
-# import string
-#
-# def is_valid_variable_name(variable_name):
-#     # Перевірка на зареєстровані слова
-#     if variable_name in keyword.kwlist:
-#         return False
-#
-#     # Перевірка на початок з цифри
-#     if variable_name[0].isdigit():
-#         return False
-#
-#     # Перевірка на наявність великих літер, пробілів та знаків пунктуації
-#     if any(char.isupper() or char in string.punctuation or char.isspace() for char in variable_name):
-#         return False
-#
-#     # Перевірка на кількість нижніх підкреслень
-#     if variable_name.count('_') > 1:
-#         return False
-#
-#     return True
-#
-# # Приклад використання
-# user_input = input("Введіть ім'я змінної: ")
-# result = is_valid_variable_name(user_input)
-# print(result)
-
 
 
 
@@ -262,55 +233,33 @@ from unicodedata import numeric
 
 #hw5.3
 #
+
+
+# user_input = input("Введіть рядок: ")
 # import string
+# def made_hashtag(input_string):
+#     clean_string = ""
 #
+#     # Проход по каждому символу во входной строке
+#     for i in input_string:
 #
-# def create_hashtag(input_string):
-#     # Видалення знаків пунктуації та пробілів
-#     clean_string = ''.join(char for char in input_string if char not in string.punctuation and not char.isspace())
+#         # Проверяем, что символ не является пунктуацией и не пробелом
+#         if i not in string.punctuation:
+#             clean_string += i
 #
-#     # Розділення на слова та перетворення кожного слова
 #     words = clean_string.split()
-#     hashtag = '#' + ''.join(word.title() for word in words)
 #
-#     # Обрізання до 140 символів, якщо потрібно
+#
+#     hashtag = "#"
+#     for word in words:
+#         hashtag += word.title()
+#
 #     if len(hashtag) > 140:
 #         hashtag = hashtag[:140]
 #
 #     return hashtag
-
 #
-# # Приклад використання
-# user_input = input("Введіть рядок: ")
-# result = create_hashtag(user_input)
+#
+# result = made_hashtag(user_input)
 # print(result)
-
-
-user_input = input("Введіть рядок: ")
-import string
-def made_hashtag(input_string):
-    clean_string = ""
-
-    # Проход по каждому символу во входной строке
-    for i in input_string:
-
-        # Проверяем, что символ не является пунктуацией и не пробелом
-        if i not in string.punctuation and  i.isalpha():
-            clean_string += i
-
-    words = clean_string.split()
-
-
-    hashtag = "#"
-    for word in words:
-        hashtag += word.title()
-
-    if len(hashtag) > 140:
-        hashtag = hashtag[:140]
-
-    return hashtag
-
-
-result = made_hashtag(user_input)
-print(result)
 
