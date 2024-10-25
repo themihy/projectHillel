@@ -244,7 +244,7 @@ from unicodedata import numeric
 #     for i in input_string:
 #
 #         # Проверяем, что символ не является пунктуацией и не пробелом
-#         if i not in string.punctuation:
+#         if i not in string.punctuation and i.isalpha():
 #             clean_string += i
 #
 #     words = clean_string.split()
@@ -263,3 +263,76 @@ from unicodedata import numeric
 # result = made_hashtag(user_input)
 # print(result)
 
+
+
+
+#hw_6.1
+# import string
+#
+# # Вводим буквы через дефіс
+# input_letters = input("Введіть дві літери через дефіс (наприклад, a-z): ")
+# letter1, letter2 = input_letters.split('-')
+#
+# # Находим индексы букв
+# start_index = string.ascii_letters.index(letter1)
+# end_index = string.ascii_letters.index(letter2)
+#
+# # Генерируем результат
+# if start_index <= end_index:
+#     result = string.ascii_letters[start_index:end_index + 1]
+# else:
+#     result = string.ascii_letters[start_index:end_index - 1:-1] + letter2
+#
+# print("Символи між ними:", result)
+
+
+#hw6.2
+# user_input = int(input("Введіть число секунд (0-8639999): "))
+# def format_time(seconds):
+#     # Константы
+#     seconds_in_a_minute = 60
+#     seconds_in_an_hour = seconds_in_a_minute * 60
+#     seconds_in_a_day = seconds_in_an_hour * 24
+#
+#     # Находим количество дней, часов, минут и секунд
+#     days, seconds = divmod(seconds, seconds_in_a_day)
+#     hours, seconds = divmod(seconds, seconds_in_an_hour)
+#     minutes, seconds = divmod(seconds, seconds_in_a_minute)
+#
+#     # Определяем правильное слово для "день"
+#     if days == 1:
+#         day_word = "день"
+#     elif 2 <= days <= 4:
+#         day_word = "дни"
+#     else:
+#         day_word = "дней"
+#
+#     # Форматируем вывод с заполнением нулями
+#     formatted_time = f"{days} {day_word}, {hours:02}:{minutes:02}:{seconds:02}"
+#     return formatted_time
+#
+#
+#
+# if 0 <= user_input < 8640000:
+#     result = format_time(user_input)
+#     print("Час у читальному вигляді:", result)
+# else:
+#     print("Число повинно бути в межах від 0 до 8639999.")
+
+#hw_6.3
+
+# def multiply_digits(number):
+#     while number > 9:
+#         product = 1
+#         # Перемножаем все цифры числа
+#         for digit in str(number):
+#             product *= int(digit)
+#         number = product
+#     return number
+#
+# # Вводим число от пользователя
+# user_input = int(input("Введіть ціле число: "))
+#
+# # Получаем результат
+# result = multiply_digits(user_input)
+# print("Результат:", result)
