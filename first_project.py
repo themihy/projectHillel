@@ -200,7 +200,39 @@ from unicodedata import numeric
 
 
 ########
-
+# hw5.1
+# import string
+# import keyword
+#
+# test_data = ['_', '__', '___', 'x', 'get_value', 'get value', 'get!value', 'some_super_puper_value', 'Get_value',
+#              'get_Value', '3m', 'm3', 'assert', 'assert_exception', 'some_super_puper__value']
+#
+# for test_variable in test_data:
+#     if len(test_variable) > 0:
+#         if test_variable in keyword.kwlist:
+#             print(f"Error! Found {test_variable} is keyword!")
+#         elif not test_variable[0].isnumeric() and test_variable.islower() and test_variable.count(" ") == 0:
+#             is_correct = True
+#             for symbol in string.punctuation.replace("_", ""):
+#                 if symbol in test_variable:
+#                     is_correct = False
+#                     print(f"Error! Found {symbol} in variable name!")
+#                     break
+#
+#
+#             first_underscore_index = test_variable.find("_")
+#             if first_underscore_index != -1:
+#                 second_underscore_index = test_variable.find("_", first_underscore_index + 1)
+#                 if second_underscore_index != -1 and second_underscore_index - first_underscore_index == 1:
+#                     is_correct = False
+#                     print(f"Error! Found double '_' in {test_variable} variable name!")
+#
+#             if is_correct:
+#                 print(f"Keyword {test_variable} is correct!")
+#         else:
+#             print(f"Error! Found {test_variable} in variable name!")
+#     else:
+#         print("Incorrect variable length!")
 
 
 
