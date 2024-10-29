@@ -1,7 +1,9 @@
 # print("hello world")
 from configparser import InterpolationMissingOptionError
 from pydoc import resolve
+from selectors import SelectSelector
 from tokenize import endpats
+from turtledemo.penrose import start
 from unittest import removeResult
 
 from unicodedata import numeric
@@ -368,3 +370,76 @@ from unicodedata import numeric
 # # Получаем результат
 # result = multiply_digits(user_input)
 # print("Результат:", result)
+
+
+# user_nubmer = int(input("Enter a seconds:"))
+# result = user_nubmer * 2
+# print(f"Квадрат числа равен: {user_nubmer} * 2=", result)
+
+
+#hw7.1
+
+# def say_hi(name, age):
+#     return f"Hi. My name is {name} and I'm {age} years old"
+#
+# # Тесты
+# assert say_hi("Jojo", 42) == "Hi. My name is Jojo and I'm 42 years old", 'Test1'
+# assert say_hi("Dodge", 21) == "Hi. My name is Dodge and I'm 21 years old", 'Test2'
+# print('ОК')
+
+
+
+#hw7.2
+# def correct_sentence(text):
+#     # Приводим первое слово к заглавной букве
+#     corrected_text = text.capitalize()
+#
+#     # Проверяем, заканчивается ли строка точкой
+#     if not corrected_text.endswith('.'):
+#         corrected_text += '.'
+#
+#     return corrected_text
+#
+#
+# # Тесты
+# assert correct_sentence("greetings, friends") == "Greetings, friends.", 'Test1'
+# assert correct_sentence("hello") == "Hello.", 'Test2'
+# assert correct_sentence("Greetings. Friends") == "Greetings. Friends.", 'Test3'
+# assert correct_sentence("Greetings, friends.") == "Greetings, friends.", 'Test4'
+# assert correct_sentence("greetings, friends.") == "Greetings, friends.", 'Test5'
+#
+# print('ОК')
+
+#hw7.3
+# def second_index(text, some_str):
+#     first_index = text.find(some_str)
+#     if first_index == -1:
+#         return None  # Если первое вхождение не найдено, возвращаем None
+#
+#     second_index = text.find(some_str, first_index + len(some_str))
+#     return second_index if second_index != -1 else None
+#
+# # Тесты
+# assert second_index("sims", "s") == 3, 'Test1'
+# assert second_index("find the river", "e") == 12, 'Test2'
+# assert second_index("hi", "h") is None, 'Test3'
+# assert second_index("Hello, hello", "lo") == 10, 'Test4'
+#
+# print('ОК')
+
+
+#hw7.4
+# def common_elements():
+#     # Генерация списков кратных 3 и 5
+#     multiples_of_3 = {i for i in range(100) if i % 3 == 0}
+#     multiples_of_5 = {i for i in range(100) if i % 5 == 0}
+#
+#     # Пересечение множеств
+#     common = multiples_of_3.intersection(multiples_of_5)
+#
+#     return common
+#
+#
+# # Тест
+# assert common_elements() == {0, 75, 45, 15, 90, 60, 30}
+# print('ОК')
