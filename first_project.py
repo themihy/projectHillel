@@ -153,18 +153,18 @@ from unicodedata import numeric
 
 #hw_4.1
 
-# numbers = [1, 0, 12, 0, 7, 0, 10]
-# a = 0
-# for num in numbers:
-#     if num != 0:
-#         numbers[a]= num
-#         a += 1
-#
-# while a < len(numbers):
-#         numbers[a] = 0
-#         a += 1
-#
-# print(numbers)
+numbers = [1, 0, 12, 0, 7, 0, 10]
+a = 0
+for num in numbers:
+    if num != 0:
+        numbers[a]= num
+        a += 1
+
+while a < len(numbers):
+        numbers[a] = 0
+        a += 1
+
+print(numbers)
 
 #hw4.2
 
@@ -502,3 +502,46 @@ from unicodedata import numeric
 # assert find_unique_value([2, 3, 3, 3, 5, 5]) == 2, 'Test2'
 # assert find_unique_value([5, 5, 5, 2, 2, 0.5]) == 0.5, 'Test3'
 # print("ОК")
+
+
+
+#hw9.1
+# def popular_words(text, words):
+#     # Приводимо текст до нижнього регістру і розділяємо його на слова
+#     text = text.lower().split()
+#
+#     # Створюємо словник для підрахунку кількості появ кожного слова
+#     result = {}
+#
+#     for word in words:
+#         # Для кожного слова з списку рахуємо його появи в тексті
+#         result[word] = text.count(word)
+#
+#     return result
+#
+#
+# # Тестовий приклад
+# assert popular_words('''When I was One I had just begun When I was Two I was nearly new ''',
+#                      ['i', 'was', 'three', 'near']) == {'i': 4, 'was': 3, 'three': 0, 'near': 0}, 'Test1'
+#
+# print('OK')
+
+
+#9.2
+# def difference(*args):
+#     # Якщо немає аргументів, повертаємо 0
+#     if not args:
+#         return 0
+#     # Знаходимо максимальне та мінімальне значення серед аргументів
+#     max_value = max(args)
+#     min_value = min(args)
+#     # Обчислюємо різницю і повертаємо її
+#     return round(max_value - min_value, 2)  # Округлюємо до 2 знаків після коми
+#
+# # Тестові приклади
+# assert difference(1, 2, 3) == 2, 'Test1'
+# assert difference(5, -5) == 10, 'Test2'
+# assert difference(10.2, -2.2, 0, 1.1, 0.5) == 12.4, 'Test3'
+# assert difference() == 0, 'Test4'
+#
+# print('OK')
