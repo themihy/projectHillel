@@ -8,8 +8,30 @@
 #
 # from unicodedata import numeric
 
-
-
+# grivna = int(input("Enter a number price: "))
+# value = (input("Enter a value 1 for usd or 2 for euro: "))
+#
+#
+# if value == "1":
+#     print(grivna / 40)
+# elif value == "2":
+#     print(grivna / 44)
+# else:
+#     print("Eror")
+while True:
+    temp = int(input("Enter a temp: "))
+    if temp <= -26 or temp >= 70:
+        print("Erorr, temepature is a so big for person")
+        continue
+    elif temp == -26 or temp < 5:
+        print("Cold")
+    elif temp == 6 or temp < 25:
+        print("Normal")
+    elif temp == 26 or temp < 50:
+        print("Hot")
+    else:
+        print("Danger")
+        break
 # number = int(input("Enter number:"))
 # n1 = number // 1000
 # n2 = number // 100 % 10
