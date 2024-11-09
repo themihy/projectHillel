@@ -1,12 +1,14 @@
 # print("hello world")
-from configparser import InterpolationMissingOptionError
-from pydoc import resolve
-from selectors import SelectSelector
-from tokenize import endpats
-from turtledemo.penrose import start
-from unittest import removeResult
+# from configparser import InterpolationMissingOptionError
+# from pydoc import resolve
+# from selectors import SelectSelector
+# from tokenize import endpats
+# from turtledemo.penrose import start
+# from unittest import removeResult
+#
+# from unicodedata import numeric
 
-from unicodedata import numeric
+
 
 # number = int(input("Enter number:"))
 # n1 = number // 1000
@@ -152,19 +154,19 @@ from unicodedata import numeric
 #
 
 #hw_4.1
-
-numbers = [1, 0, 12, 0, 7, 0, 10]
-a = 0
-for num in numbers:
-    if num != 0:
-        numbers[a]= num
-        a += 1
-
-while a < len(numbers):
-        numbers[a] = 0
-        a += 1
-
-print(numbers)
+#
+# numbers = [1, 0, 12, 0, 7, 0, 10]
+# a = 0
+# for num in numbers:
+#     if num != 0:
+#         numbers[a]= num
+#         a += 1
+#
+# while a < len(numbers):
+#         numbers[a] = 0
+#         a += 1
+#
+# print(numbers)
 
 #hw4.2
 
@@ -546,4 +548,68 @@ print(numbers)
 #
 # print('OK')
 
+#hw10.1
+# def some_gen(begin, end, func):
+#     """
+#     begin: первый элемент последовательности
+#     end: количество элементов в последовательности
+#     func: функция, которая формирует значения для последовательности
+#     """
+#     current_value = begin
+#     for _ in range(end):
+#         yield current_value
+#         current_value = func(current_value)
+#
+# # Пример функции, которая возводит число в квадрат
+# def pow(x):
+#     return x ** 2
+#
+# # Тестирование генератора
+# from inspect import isgenerator
+#
+# gen = some_gen(2, 4, pow)
+#
+# # Проверка, что это генератор
+# assert isgenerator(gen) == True, 'Test1'
+#
+# # Проверка вывода генератора
+# assert list(gen) == [2, 4, 16, 256], 'Test2'
+#
+# print('OK')
+
+#h10.2
+# def first_word(text):
+#     """ Пошук першого слова """
+#     # Видаляємо зайві пробіли на початку і в кінці
+#     text = text.strip()
+#
+#     # Заміна розділових знаків на пробіли (також коми, крапки і т.д.)
+#     for char in '.,!?;:':
+#         text = text.replace(char, ' ')
+#
+#     # Розбиваємо рядок по пробілах і повертаємо перше слово
+#     return text.split()[0]
+#
+#
+# # Тестування:
+# assert first_word("Hello world") == "Hello", 'Test1'
+# assert first_word("greetings, friends") == "greetings", 'Test2'
+# assert first_word("don't touch it") == "don't", 'Test3'
+# assert first_word(".., and so on ...") == "and", 'Test4'
+# assert first_word("hi") == "hi", 'Test5'
+# assert first_word("Hello.World") == "Hello", 'Test6'
+# print('OK')
+#
+
+#hw10.3
+
+# def is_even(digit):
+#     """ Перевірка чи є парним число """
+#     return digit % 2 == 0
+#
+# # Тестування:
+# assert is_even(2) == True, 'Test1'
+# assert is_even(5) == False, 'Test2'
+# assert is_even(0) == True, 'Test3'
+# print('OK')
 
