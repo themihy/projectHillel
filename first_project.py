@@ -21,6 +21,7 @@
 # print(n4)
 
 
+
 #number = int(input('Enter a number:'))
 #n1 = number // 10000
 #n2 = number //  1000 % 10
