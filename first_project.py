@@ -943,3 +943,212 @@
 #     print(e)  # Достигнут минимум
 # assert counter.get_current() == 7, 'Test4'
 
+
+
+
+#hw14.1
+# class GroupFullError(Exception):
+#     """Виняток, що виникає коли група перевищує ліміт студентів."""
+#     def __init__(self, message="Група не може містити більше 10 студентів."):
+#         self.message = message
+#         super().__init__(self.message)
+#
+#
+# class Human:
+#     def __init__(self, gender, age, first_name, last_name):
+#         self.gender = gender
+#         self.age = age
+#         self.first_name = first_name
+#         self.last_name = last_name
+#
+#     def __str__(self):
+#         return f"{self.first_name} {self.last_name}, {self.gender}, {self.age} years old"
+#
+#
+# class Student(Human):
+#     def __init__(self, gender, age, first_name, last_name, record_book):
+#         super().__init__(gender, age, first_name, last_name)
+#         self.record_book = record_book
+#
+#     def __str__(self):
+#         return f"Student: {super().__str__()}, Record Book: {self.record_book}"
+#
+#
+# class Group:
+#     def __init__(self, number):
+#         self.number = number
+#         self.group = set()
+#
+#     def add_student(self, student):
+#         if len(self.group) >= 10:
+#             raise GroupFullError("Нельзя добавить больше 10 студентов.")
+#         self.group.add(student)
+#
+#     def delete_student(self, last_name):
+#         student = self.find_student(last_name)
+#         if student:
+#             self.group.remove(student)
+#
+#     def find_student(self, last_name):
+#         for student in self.group:
+#             if student.last_name == last_name:
+#                 return student
+#         return None
+#
+#     def __str__(self):
+#         all_students = "\n".join(str(student) for student in self.group)
+#         return f"Group Number: {self.number}\n{all_students}"
+#
+#
+# # Тестування
+#
+# st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
+# st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+# gr = Group('PD1')
+# gr.add_student(st1)
+# gr.add_student(st2)
+#
+# # Додавання більше 10 студентів
+# for i in range(8):  # Додаємо ще 8 студентів
+#     gr.add_student(Student('Male', 20, f'John{i}', f'Lastname{i}', f'AN14{i+3}'))
+#
+# print(gr)
+#
+# # Тепер спробуємо додати 11-го студента
+# try:
+#     gr.add_student(Student('Female', 22, 'Anna', 'Smith', 'AN154'))
+# except GroupFullError as e:
+#     print(f"Помилка: {e}")
+#
+# # Тест на пошук студента
+# assert str(gr.find_student('Jobs')) == str(st1), 'Test1'
+# assert gr.find_student('Jobs2') is None, 'Test2'
+# assert isinstance(gr.find_student('Jobs'), Student) is True, 'Метод поиска должен возвращать экземпляр'
+#
+# # Видалення студента
+# gr.delete_student('Taylor')
+# print(gr)  # Only one student left
+#
+# gr.delete_student('Taylor')  # No error!
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# #hw14.2 Возможный вариант я так думаю, Дмитрий, если что напишите  мне при проверке дз да да нет нет))))😊
+# class Student:
+#     def __init__(self, gender, age, first_name, last_name, id_number):
+#         self.gender = gender
+#         self.age = age
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.id_number = id_number
+#
+#     def __str__(self):
+#         return f"{self.first_name} {self.last_name}"
+#
+#     def __eq__(self, other):
+#         if isinstance(other, Student):
+#             return str(self) == str(other)
+#         return False
+#
+#     def __hash__(self):
+#         return hash(str(self))
+#
+#
+# class Group:
+#     def __init__(self, group_name):
+#         self.group_name = group_name
+#         self.students = set()
+#
+#     def add_student(self, student):
+#         self.students.add(student)
+#
+#     def find_student(self, last_name):
+#         for student in self.students:
+#             if student.last_name == last_name:
+#                 return student
+#         return None
+#
+#     def delete_student(self, last_name):
+#         student_to_delete = self.find_student(last_name)
+#         if student_to_delete:
+#             self.students.remove(student_to_delete)
+#
+#     def __str__(self):
+#         return "\n".join([str(student) for student in self.students])
+#
+#
+# # Тестирование
+#
+# if __name__ == "__main__":
+#     # Создаем студентов
+#     st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
+#     st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+#
+#     # Создаем группу и добавляем студентов
+#     gr = Group('PD1')
+#     gr.add_student(st1)
+#     gr.add_student(st2)
+#
+#     # Печатаем группу
+#     print(gr)
+#
+#     # Проверяем поиск студентов по фамилии
+#     assert gr.find_student('Jobs') == st1  # 'Steve Jobs'
+#     assert gr.find_student('Jobs2') is None  # Студент не найден
+#
+#     # Удаляем студента из группы
+#     gr.delete_student('Taylor')
+#     print(gr)  # Ожидаем что останется только один студент (Steve Jobs)
+
+
+
+# #hw14.2 А этот вроде тот что нужен. классы отдельно по файлам и импорт в основной
+# from student import Student
+# from group import Group
+#
+# # Создание студентво и группы
+# st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
+# st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+# gr = Group('PD1')
+#
+# # Додавання студенов в группу
+# gr.add_student(st1)
+# gr.add_student(st2)
+#
+# # Вывод группы
+# print(gr)
+#
+# # Тестування пошуку студента
+# assert gr.find_student('Jobs') == st1  # Проверка, найедется ли студентт "Jobs"
+# assert gr.find_student('Jobs2') is None  # Студент с фамилией "Jobs2" нет такого
+#
+# # Видалення студента
+# gr.delete_student('Taylor')
+# print(gr)  # Після видалення повинен залишитись лише один студент
